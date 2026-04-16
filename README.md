@@ -20,7 +20,7 @@
 
 ## 📌 Project Overview
 
-AtliQ Mart is a **Gujarat-based organic food manufacturer** that recently expanded to the United States. Rapid growth exposed a critical supply chain vulnerability: **immature order management** causing customer dissatisfaction.
+Patel Mart is a **Gujarat-based organic food manufacturer** that recently expanded to the United States. Rapid growth exposed a critical supply chain vulnerability: **immature order management** causing customer dissatisfaction.
 
 | Stakeholder | Problem Identified |
 |---|---|

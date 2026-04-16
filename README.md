@@ -12,7 +12,7 @@
 
 **Built to demonstrate modern supply chain analytics for top FMCG companies in the Netherlands**
 
-[View Report](#-project-report) · [KPI Results](#-kpi-results) · [Pipeline](#-data-pipeline) · [Setup Guide](#-local-setup)
+[KPI Results](Screenshots/KPI%20result.png) · [Pipeline](Screenshots/Data%20Model.png) 
 
 </div>
 
@@ -32,6 +32,7 @@ Patel Mart is a **Gujarat-based organic food manufacturer** that recently expand
 ---
 
 ## 🏗️ Architecture
+![Data Pipeline Architecture](Screenshots/data_pipeline_architecture.png)
 
 ```
 📧 Gmail Inbox (Daily CSV Attachments)
@@ -68,41 +69,7 @@ Patel Mart is a **Gujarat-based organic food manufacturer** that recently expand
 ---
 
 ## 🗄️ Data Model — Star Schema
-
-```
-                    ┌─────────────────────┐
-                    │   dim_customers     │
-                    │  35 rows · 4 cols   │
-                    │  customer_id (PK)   │
-                    │  customer_name      │
-                    │  city · currency    │
-                    └──────────┬──────────┘
-                               │
-┌──────────────────┐           │           ┌──────────────────────┐
-│   dim_products   │           │           │  dim_targets_orders  │
-│  18 rows · 5 cols│           │           │  35 rows · 4 cols    │
-│  product_id (PK) │           │           │  customer_id (PK)    │
-│  product_name    │     ┌─────┴──────┐    │  ontime_target_pct   │
-│  category        │─────┤FACT TABLES │────│  infull_target_pct   │
-│  price_INR/USD   │     └─────┬──────┘    │  otif_target_pct     │
-└──────────────────┘           │           └──────────────────────┘
-                               │
-              ┌────────────────┴────────────────┐
-              │                                 │
-┌─────────────────────────┐    ┌─────────────────────────┐
-│    fact_order_line      │    │     fact_aggregate      │
-│  25,886 rows · 11 cols  │    │  14,931 rows · 6 cols   │
-│  order_id + product_id  │    │  order_id (PK)          │
-│  (composite PK)         │    │  customer_id            │
-│  order_placement_date   │    │  order_placement_date   │
-│  agreed_delivery_date   │    │  on_time                │
-│  actual_delivery_date   │    │  in_full                │
-│  order_qty              │    │  otif                   │
-│  delivery_qty           │    └─────────────────────────┘
-│  in_full · on_time      │
-│  on_time_in_full        │
-└─────────────────────────┘
-```
+![Pipeline](Screenshots/Data%20Model.png)
 
 ---
 
@@ -220,10 +187,9 @@ atliq-supply-chain-intelligence/
 ├── 📁 sql/
 │   ├── schema.sql                    # Table creation scripts
 │   └── kpi_queries.sql               # KPI calculation queries
-│
-├── 📁 analysis/
-│   └── kpi_analysis.py               # Python KPI calculations
-│
+│   └── Supply_Chain_KPI_Calculations.sql             
+│   └── top_customers_kpi.sql
+|
 ├── 📁 screenshots/
 │   ├── n8n_workflow.png
 │   ├── gmail_trigger.png

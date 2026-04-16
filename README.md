@@ -213,19 +213,6 @@ NOT category-specific. Root cause: inventory allocation, not production.
 ```
 atliq-supply-chain-intelligence/
 │
-├── 📁 data/
-│   ├── raw/                          # Original CSV files
-│   │   ├── dim_customers.csv
-│   │   ├── dim_products.csv
-│   │   ├── dim_targets_orders.csv
-│   │   ├── fact_order_line.csv
-│   │   └── fact_aggregate.csv
-│   └── cleaned/                      # Supabase-ready cleaned files
-│       ├── dim_customers_clean.csv
-│       ├── dim_products_clean.csv
-│       ├── dim_targets_orders_clean.csv
-│       ├── fact_order_line_clean.csv
-│       └── fact_aggregate_clean.csv
 │
 ├── 📁 pipeline/
 │   └── n8n_workflow.json             # Exported n8n workflow

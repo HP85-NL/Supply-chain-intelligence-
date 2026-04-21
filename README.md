@@ -178,7 +178,7 @@ NOT category-specific. Root cause: inventory allocation, not production.
 ## 📁 Repository Structure
 
 ```
-atliq-supply-chain-intelligence/
+PatelMart-supply-chain-intelligence/
 │
 │
 ├── 📁 pipeline/
@@ -199,7 +199,7 @@ atliq-supply-chain-intelligence/
 │   └── quadratic_top_customers.png
 │
 ├── 📁 report/
-│   └── AtliQ_Mart_Supply_Chain_Intelligence_Report.pdf
+│   └── Patel_Mart_Supply_Chain_Intelligence_Report.pdf
 │
 └── README.md
 ```
